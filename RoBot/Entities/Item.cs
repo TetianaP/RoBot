@@ -17,7 +17,7 @@ namespace RoBot.Entities
         public Position Position
         {
             get { return this.position; }
-            private set
+            set
             {
                 if (OnPositionChange != null && !OnPositionChange(value).IsSuccess)
                 {

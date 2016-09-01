@@ -19,12 +19,12 @@ namespace RoBot.Entities
         /// <summary>
         /// X-axis coordinate
         /// </summary>
-        public int Latitude { get; set; }
+        public int Latitude { get; private set; }
 
         /// <summary>
         /// Y-axis coordinate
         /// </summary>
-        public int Longitude { get; set; }
+        public int Longitude { get; private set; }
 
         /// <summary>
         /// Direction of cource

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RoBot.Classes;
+﻿using RoBot.Classes;
 using RoBot.Classes.MapProviders;
 using RoBot.Entities;
 
@@ -20,17 +15,19 @@ namespace RoBot.Actions
 
         protected override Result Execute()
         {
-            throw new NotImplementedException();
+            this.Item.Position = this.NewPosition;
+            return new Result(true);
         }
 
         protected override Result ValidateAction()
         {
-            if (this.NewPosition == null)
+            var result = base.ValidateAction();
+            if (!result.IsSuccess)
             {
-                return new Result(false);
+                return result;
             }
 
-            return base.ValidateAction();
+            return new Result(this.NewPosition != null);
         }
     }
 }

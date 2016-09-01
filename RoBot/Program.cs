@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RoBot.Entities;
 using RoBot.Classes;
 using RoBot.Classes.MapProviders;
-using RoBot.Actions;
 using RoBot.ActionFabrics;
 
 namespace RoBot
@@ -22,6 +17,9 @@ namespace RoBot
             // Register all actions available, should be moved to core or configuration
             actionManager.RegisterAction("move", new MoveActionCreator());
             actionManager.RegisterAction("place", new PlaceActionCreator());
+            actionManager.RegisterAction("left", new RotateLeftActionCreator());
+            actionManager.RegisterAction("right", new RotateRightActionCreator());
+            actionManager.RegisterAction("report", new ReportActionCreator());
 
             while (true)
             {

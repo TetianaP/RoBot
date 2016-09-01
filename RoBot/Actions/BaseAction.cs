@@ -42,7 +42,7 @@ namespace RoBot.Actions
 
         protected virtual Result ValidateAction()
         {
-            return new Result(this.MapDataProvider != null && this.Item != null);
+            return new Result(this.Item != null && this.MapDataProvider != null);
         }
 
         private Result ValidatePosition(Position position)

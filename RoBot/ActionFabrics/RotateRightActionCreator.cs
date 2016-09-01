@@ -1,14 +1,15 @@
 ﻿using RoBot.Actions;
 using RoBot.Classes.MapProviders;
 using RoBot.Entities;
+using RoBot.Classes;
 
 namespace RoBot.ActionFabrics
 {
-    public class MoveActionCreator : BaseActionCreator
+    public class RotateRightActionCreator : BaseActionCreator
     {
         public override BaseAction CreateAction(Item item, MapDataProvider mapDataProvider, string actionParameters)
         {
-            return new MoveAction(item, mapDataProvider);
+            return new RotateAction(item, mapDataProvider, RotateDirection.Right);
         }
     }
 }

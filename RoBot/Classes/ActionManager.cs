@@ -28,7 +28,7 @@ namespace RoBot.Classes
         public BaseAction CreateAction(string actionString)
         {
             string[] actionData = actionString.Split(new char[] { ' ' }, 2, StringSplitOptions.RemoveEmptyEntries);
-            var actionName = actionData[0];
+            var actionName = actionData[0].ToLower();
             var actionParameters = actionData.Length > 1 ? actionData[1] : string.Empty;
 
             BaseActionCreator creator = this.GetActionCreator(actionName);
