@@ -43,6 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionFabrics\BaseActionCreator.cs" />
+    <Compile Include="ActionFabrics\MoveActionCreator.cs" />
+    <Compile Include="ActionFabrics\PlaceActionCreator.cs" />
+    <Compile Include="Actions\BaseAction.cs" />
+    <Compile Include="Actions\MoveAction.cs" />
+    <Compile Include="Actions\PlaceAction.cs" />
+    <Compile Include="Classes\ActionManager.cs" />
+    <Compile Include="Classes\Direction.cs" />
+    <Compile Include="Classes\Result.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Classes\MapProviders\MapDataProvider.cs" />
+    <Compile Include="Entities\Position.cs" />
+    <Compile Include="Entities\Robot.cs" />
+    <Compile Include="Classes\MapProviders\SquareTabletopProvider.cs" />
+    <Compile Include="Helpers\Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
