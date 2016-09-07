@@ -5,11 +5,11 @@ using RoBot.Classes;
 
 namespace RoBot.ActionFabrics
 {
-    public class RotateRightActionCreator : BaseActionCreator
+    public class RotateLeftActionCreator : BaseActionCreator
     {
         public override BaseAction CreateAction(Item item, MapDataProvider mapDataProvider, string actionParameters)
         {
-            return new RotateAction(item, mapDataProvider, RotateDirection.Right);
+            return new RotateAction(item as Robot, mapDataProvider, RotateDirection.Left);
         }
     }
 }

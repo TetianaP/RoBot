@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace RoBot.Entities
 {
-    public class Position
+    public abstract class Position
     {
-        public Position(int latitude, int longitude, Direction direction)
+        public Position(int latitude, int longitude)
         {
             this.Latitude = latitude;
             this.Longitude = longitude;
-            this.Direction = direction;
         }
 
         /// <summary>
@@ -25,10 +24,5 @@ namespace RoBot.Entities
         /// Y-axis coordinate
         /// </summary>
         public int Longitude { get; private set; }
-
-        /// <summary>
-        /// Direction of cource
-        /// </summary>
-        public Direction Direction { get; set; }
     }
 }

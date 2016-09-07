@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using RoBot.Actions;
 using RoBot.Classes.MapProviders;
 using RoBot.Entities;
@@ -40,8 +36,8 @@ namespace RoBot.ActionFabrics
                 return null;
             }
             
-            var position = new Position(latitude, longitude, (Direction)direction);
-            return new PlaceAction(item, mapDataProvider, position);
+            var position = new BidimensionalPoint(latitude, longitude);
+            return new PlaceAction(item, mapDataProvider, position, (Direction)direction);
         }
     }
 }

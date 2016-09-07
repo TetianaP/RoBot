@@ -6,12 +6,14 @@ namespace RoBot.Actions
 {
     public class PlaceAction : BaseAction
     {
-        public PlaceAction(Item item, MapDataProvider mapDataProvider, Position position) : base(item, mapDataProvider)
+        public PlaceAction(Item item, MapDataProvider mapDataProvider, Position position, Direction direction) : base(item, mapDataProvider)
         {
             this.NewPosition = position;
+            this.NewDirection = direction;
         }
 
         public Position NewPosition { get; private set; }
+        public Direction NewDirection { get; private set; }
 
         protected override Result Execute()
         {

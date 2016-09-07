@@ -18,7 +18,11 @@ namespace RoBot.Actions
                 throw new Exception("Position is not set for current item");
             }
 
-            Console.WriteLine(string.Format("Position: {0} {1}, facing: {2}.", this.Item.Position.Latitude, this.Item.Position.Longitude, this.Item.Position.Direction.ToString().ToUpper()));
+            if (this.Item is Robot)
+            {
+                Console.WriteLine(string.Format("Position: {0} {1}, facing: {2}.", this.Item.Position.Latitude, this.Item.Position.Longitude, ((Robot)this.Item).Direction.ToString().ToUpper()));
+            }
+
             return new Result(true);
         }
     }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RoBot.Classes.MapProviders;
 using RoBot.Entities;
 using RoBot.Classes;
@@ -11,7 +7,7 @@ namespace RoBot.Actions
 {
     public class RotateAction : BaseAction
     {
-        public RotateAction(Item item, MapDataProvider mapDataProvider, RotateDirection rotateDirection) : base(item, mapDataProvider)
+        public RotateAction(Robot item, MapDataProvider mapDataProvider, RotateDirection rotateDirection) : base(item, mapDataProvider)
         {
             this.RotateDirection = rotateDirection;
         }
@@ -34,8 +30,8 @@ namespace RoBot.Actions
                     throw new ArgumentException(string.Format("No action rotate found for '{0}' direction", this.RotateDirection));
             }
 
-            int direction = ((int)this.Item.Position.Direction + step + (Math.Abs(step) * directionsNumber)) % directionsNumber;
-            this.Item.Position.Direction = (Direction)direction;
+            int direction = ((int)((Robot)this.Item).Direction + step + (Math.Abs(step) * directionsNumber)) % directionsNumber;
+            ((Robot)this.Item).Direction = (Direction)direction;
 
             return new Result(true);
         }

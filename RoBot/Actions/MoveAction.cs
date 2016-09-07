@@ -7,7 +7,7 @@ namespace RoBot.Actions
 {
     public class MoveAction : BaseAction
     {
-        public MoveAction(Item item, MapDataProvider mapDataProvider) : base(item, mapDataProvider)
+        public MoveAction(Robot item, MapDataProvider mapDataProvider) : base(item, mapDataProvider)
         {
         }
 
@@ -15,22 +15,22 @@ namespace RoBot.Actions
         {
             var step = 1;
             Position newPosition;
-            switch (Item.Position.Direction)
+            switch (((Robot)Item).Direction)
             {
                 case Direction.NORTH:
-                    newPosition = new Position(this.Item.Position.Latitude, this.Item.Position.Longitude + step, this.Item.Position.Direction);
+                    newPosition = new BidimensionalPoint(this.Item.Position.Latitude, this.Item.Position.Longitude + step);
                     break;
                 case Direction.SOUTH:
-                    newPosition = new Position(this.Item.Position.Latitude, this.Item.Position.Longitude - step, this.Item.Position.Direction);
+                    newPosition = new BidimensionalPoint(this.Item.Position.Latitude, this.Item.Position.Longitude - step);
                     break;
                 case Direction.EAST:
-                    newPosition = new Position(this.Item.Position.Latitude + step, this.Item.Position.Longitude, this.Item.Position.Direction);
+                    newPosition = new BidimensionalPoint(this.Item.Position.Latitude + step, this.Item.Position.Longitude);
                     break;
                 case Direction.WEST:
-                    newPosition = new Position(this.Item.Position.Latitude - step, this.Item.Position.Longitude, this.Item.Position.Direction);
+                    newPosition = new BidimensionalPoint(this.Item.Position.Latitude - step, this.Item.Position.Longitude);
                     break;
                 default:
-                    throw new ArgumentException(string.Format("No action move found for '{0}' direction", Item.Position.Direction));
+                    throw new ArgumentException(string.Format("No action move found for '{0}' direction", ((Robot)Item).Direction));
             }
 
             this.Item.Position = newPosition;

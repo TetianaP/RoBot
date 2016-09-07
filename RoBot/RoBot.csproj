@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionFabrics\BaseActionCreator.cs" />
-    <Compile Include="ActionFabrics\MoveActionCreator.cs" />
-    <Compile Include="ActionFabrics\PlaceActionCreator.cs" />
-    <Compile Include="ActionFabrics\ReportActionCreator.cs" />
-    <Compile Include="ActionFabrics\RotateRightActionCreator.cs" />
-    <Compile Include="ActionFabrics\RotateLeftActionCreator.cs" />
+    <Compile Include="ActionFactories\BaseActionCreator.cs" />
+    <Compile Include="ActionFactories\MoveActionCreator.cs" />
+    <Compile Include="ActionFactories\PlaceActionCreator.cs" />
+    <Compile Include="ActionFactories\ReportActionCreator.cs" />
+    <Compile Include="ActionFactories\RotateLeftActionCreator.cs" />
+    <Compile Include="ActionFactories\RotateRightActionCreator.cs" />
     <Compile Include="Actions\BaseAction.cs" />
     <Compile Include="Actions\MoveAction.cs" />
     <Compile Include="Actions\PlaceAction.cs" />
@@ -58,6 +58,7 @@
     <Compile Include="Classes\Direction.cs" />
     <Compile Include="Classes\Result.cs" />
     <Compile Include="Classes\RotateDirection.cs" />
+    <Compile Include="Entities\BidimensionalPoint.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Classes\MapProviders\MapDataProvider.cs" />
     <Compile Include="Entities\Position.cs" />

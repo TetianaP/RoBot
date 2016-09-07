@@ -12,9 +12,6 @@ namespace RoBot.Classes.MapProviders
     /// </summary>
     public abstract class MapDataProvider
     {
-        
-
-
         public virtual bool IsPositionAvailable(Position position)
         {
             return true;

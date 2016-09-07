@@ -18,7 +18,8 @@ namespace RoBot.Classes.MapProviders
 
         public override bool IsPositionAvailable(Position position)
         {
-            return position.Latitude < (this.SquareSide - 1) && position.Longitude < (this.SquareSide - 1);
+            return position.Latitude < (this.SquareSide - 1) && position.Longitude < (this.SquareSide - 1) &&
+                position.Latitude >= 0 && position.Longitude >= 0;
         }
     }
 }
