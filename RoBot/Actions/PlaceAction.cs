@@ -6,7 +6,7 @@ namespace RoBot.Actions
 {
     public class PlaceAction : BaseAction
     {
-        public PlaceAction(Item item, MapDataProvider mapDataProvider, Position position, Direction direction) : base(item, mapDataProvider)
+        public PlaceAction(Robot item, MapDataProvider mapDataProvider, BidimensionalPoint position, Direction direction) : base(item, mapDataProvider)
         {
             this.NewPosition = position;
             this.NewDirection = direction;
@@ -17,7 +17,7 @@ namespace RoBot.Actions
 
         protected override Result Execute()
         {
-            this.Item.Position = this.NewPosition;
+            ((Robot)this.Item).SetPosition((BidimensionalPoint)this.NewPosition);
             return new Result(true);
         }
 

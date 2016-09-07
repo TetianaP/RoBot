@@ -14,7 +14,7 @@ namespace RoBot.Actions
         protected override Result Execute()
         {
             var step = 1;
-            Position newPosition;
+            BidimensionalPoint newPosition;
             switch (((Robot)Item).Direction)
             {
                 case Direction.NORTH:
@@ -33,7 +33,7 @@ namespace RoBot.Actions
                     throw new ArgumentException(string.Format("No action move found for '{0}' direction", ((Robot)Item).Direction));
             }
 
-            this.Item.Position = newPosition;
+            ((Robot)this.Item).SetPosition(newPosition);
             return new Result(true);
         }
 

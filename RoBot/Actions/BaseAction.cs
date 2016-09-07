@@ -49,6 +49,5 @@ namespace RoBot.Actions
         {
             return new Result(MapDataProvider.IsPositionAvailable(position));
         }
-
     }
 }

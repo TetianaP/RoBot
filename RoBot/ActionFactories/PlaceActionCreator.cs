@@ -37,7 +37,7 @@ namespace RoBot.ActionFabrics
             }
             
             var position = new BidimensionalPoint(latitude, longitude);
-            return new PlaceAction(item, mapDataProvider, position, (Direction)direction);
+            return new PlaceAction(item as Robot, mapDataProvider, position, (Direction)direction);
         }
     }
 }
