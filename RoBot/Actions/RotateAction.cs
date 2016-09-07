@@ -30,7 +30,8 @@ namespace RoBot.Actions
                     throw new ArgumentException(string.Format("No action rotate found for '{0}' direction", this.RotateDirection));
             }
 
-            int direction = ((int)((Robot)this.Item).Direction + step + (Math.Abs(step) * directionsNumber)) % directionsNumber;
+            int absNone = (Math.Abs(step / directionsNumber) + 1) * directionsNumber;
+            int direction = ((int)((Robot)this.Item).Direction + step + absNone) % directionsNumber;
             ((Robot)this.Item).Direction = (Direction)direction;
 
             return new Result(true);
