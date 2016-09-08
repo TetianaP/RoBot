@@ -7,18 +7,26 @@ using RoBot.Entities;
 
 namespace RoBot.Classes.MapProviders
 {
-    public class SquareTabletopProvider : MapDataProvider
+    public class TabletopProvider : MapDataProvider
     {
-        public SquareTabletopProvider(int squareSide)
+        public TabletopProvider(int sideLength)
         {
-            this.SquareSide = squareSide;
+            this.TableLength = sideLength;
+            this.TableWidth = sideLength;
         }
 
-        public int SquareSide { get; private set; }
+        public TabletopProvider(int length, int width)
+        {
+            this.TableLength = length;
+            this.TableWidth = width;
+        }
+
+        public int TableLength { get; private set; }
+        public int TableWidth { get; private set; }
 
         public override bool IsPositionAvailable(Position position)
         {
-            return position.Latitude <= (this.SquareSide - 1) && position.Longitude <= (this.SquareSide - 1) &&
+            return position.Latitude <= (this.TableLength - 1) && position.Longitude <= (this.TableWidth - 1) &&
                 position.Latitude >= 0 && position.Longitude >= 0;
         }
     }

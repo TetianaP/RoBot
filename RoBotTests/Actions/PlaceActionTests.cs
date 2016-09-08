@@ -18,7 +18,7 @@ namespace RoBot.Actions.Tests
         public void PlaceActionTest()
         {
             var robot = new Robot();
-            var squareTabletopProvider = new SquareTabletopProvider(5);
+            var squareTabletopProvider = new TabletopProvider(5);
 
             var point = new BidimensionalPoint(3, 4);
             var action = new PlaceAction(robot, squareTabletopProvider, point, Direction.NORTH);

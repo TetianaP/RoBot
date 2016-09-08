@@ -14,7 +14,7 @@ namespace RoBot.Actions.Tests
             var point = new BidimensionalPoint(3, 4);
             var robot = new Robot() { Direction = Direction.SOUTH };
             robot.SetPosition(point);
-            var squareTabletopProvider = new SquareTabletopProvider(5);
+            var squareTabletopProvider = new TabletopProvider(5);
 
             var action = new RotateAction(robot, squareTabletopProvider, RotateDirection.Right);
             action.Run();

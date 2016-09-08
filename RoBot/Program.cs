@@ -11,7 +11,7 @@ namespace RoBot
         static void Main(string[] args)
         {
             Item robot = new Robot();
-            MapDataProvider squareTabletopProvider = new SquareTabletopProvider(5);
+            MapDataProvider squareTabletopProvider = new TabletopProvider(5);
             var actionManager = new ActionManager(robot, squareTabletopProvider);
 
             // Register all actions available, should be moved to core or configuration

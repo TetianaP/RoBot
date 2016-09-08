@@ -12,12 +12,17 @@ namespace RoBot.Actions
             this.NewDirection = direction;
         }
 
-        public Position NewPosition { get; private set; }
+        public BidimensionalPoint NewPosition { get; private set; }
         public Direction NewDirection { get; private set; }
+
+        public new Robot Item
+        {
+            get { return (Robot)base.Item; }
+        }
 
         protected override Result Execute()
         {
-            ((Robot)this.Item).SetPosition((BidimensionalPoint)this.NewPosition);
+            this.Item.SetPosition(this.NewPosition);
             return new Result(true);
         }
 

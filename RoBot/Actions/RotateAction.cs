@@ -14,6 +14,11 @@ namespace RoBot.Actions
 
         public RotateDirection RotateDirection { get; private set; }
 
+        public new Robot Item
+        {
+            get { return (Robot)base.Item; }
+        }
+
         protected override Result Execute()
         {
             int step;
@@ -31,8 +36,8 @@ namespace RoBot.Actions
             }
 
             int absNone = (Math.Abs(step / directionsNumber) + 1) * directionsNumber;
-            int direction = ((int)((Robot)this.Item).Direction + step + absNone) % directionsNumber;
-            ((Robot)this.Item).Direction = (Direction)direction;
+            int direction = ((int)this.Item.Direction + step + absNone) % directionsNumber;
+            this.Item.Direction = (Direction)direction;
 
             return new Result(true);
         }

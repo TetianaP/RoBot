@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoBot.Entities
 {
-    public class Item
+    public abstract class Item
     {
         public delegate Result PositionValidator(Position position);
         public PositionValidator OnPositionChange;

@@ -11,7 +11,7 @@ namespace RoBot.Actions
 {
     public abstract class BaseAction
     {
-        public Item Item { get; private set; }
+        public virtual Item Item { get; private set; }
 
         public MapDataProvider MapDataProvider { get; private set; }
         
