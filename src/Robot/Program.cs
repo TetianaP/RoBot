@@ -1,8 +1,8 @@
 ﻿using Robot.ActionFactories;
 using Robot.Classes;
+using Robot.Classes.MapProviders;
 using Robot.Interfaces;
 using System;
-using Robot.Classes.MapProviders;
 
 namespace Robot
 {
@@ -28,6 +28,7 @@ namespace Robot
                 if (action == null)
                 {
                     Console.WriteLine("Can not find an action");
+                    continue;
                 }
 
                 action.Run();

@@ -26,7 +26,7 @@ namespace Robot.Classes
             var actionName = actionData[0].ToLower();
             var actionParameters = actionData.Length > 1 ? actionData[1] : string.Empty;
 
-            BaseActionCreator creator = this.GetActionCreator(actionName);
+            BaseActionCreator creator = GetActionCreator(actionName);
 
             return creator?.CreateAction(Item, MapDataProvider, actionParameters);
         }

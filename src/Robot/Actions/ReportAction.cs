@@ -1,25 +1,26 @@
 ﻿using Robot.Classes;
 using Robot.Interfaces;
-using System;
 
 namespace Robot.Actions
 {
     public class ReportAction : BaseAction
     {
-        public ReportAction(IRobot item, IMapDataProvider mapDataProvider) : base(item, mapDataProvider)
+        private readonly IReporter _reporter;
+
+        public ReportAction(IRobot item, IMapDataProvider mapDataProvider, IReporter reporter) : base(item, mapDataProvider)
         {
+            _reporter = reporter;
         }
 
         protected override Result Execute()
         {
-            if (Item.Position == null)
-            {
-                throw new Exception("Position is not set for current item");
-            }
-
-            Console.WriteLine("Position: {0} {1}, facing: {2}.", Item.Position.Latitude, Item.Position.Longitude, Item.Direction.ToString().ToUpper());
-
+            _reporter.Info($"Position: {Item.Position.Latitude} {Item.Position.Longitude}, facing: {Item.Direction.ToString().ToUpper()}.");
             return new Result(true);
+        }
+
+        protected override bool IsActionValid()
+        {
+            return base.IsActionValid() && Item.Position != null;
         }
     }
 }
