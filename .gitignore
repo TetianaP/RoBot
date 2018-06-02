@@ -1,0 +1,5 @@
+Robot.Tests/bin/
+src/Robot/obj/
+src/Robot/bin/
+Robot.Tests/obj/
+.vs/
